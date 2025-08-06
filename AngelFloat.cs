@@ -1,4 +1,4 @@
-﻿using Utilla;
+\using Utilla;
 using HarmonyLib;
 using System.Collections.Generic;
 using BepInEx;
@@ -18,9 +18,9 @@ namespace TP
         {
             if (inRoom)
             {
-
+                if(ControllerInputPoller.instance.rightControllerIndexFloat > 0.1f && ControllerInputPoller.instance.leftControllerIndexFloat > 0.1f)
                 {
-                    GorillaLocomotion.GTPlayer.Instance.transform.position += GorillaLocomotion.GTPlayer.Instance.headCollider.transform.forward * Time.deltaTime * 2;
+                    GorillaLocomotion.GTPlayer.Instance.transform.position += GorillaLocomotion.GTPlayer.Instance.headCollider.transform.forward * Time.deltaTime * 1;
 
                     Rigidbody rb = GTPlayer.Instance.GetComponent<Rigidbody>();
                     rb.velocity = Vector3.zero;
